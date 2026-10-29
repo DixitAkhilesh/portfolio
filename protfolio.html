@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhilesh Dixit | Software Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --bg-body: #f4f7f9;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --border-light: #e2e8f0;
+            --pill-bg: #eff6ff;
+            --pill-text: #1d4ed8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px;
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        header h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            background-color: var(--bg-body);
+            transition: all 0.2s ease;
+        }
+
+        .contact-links a:hover {
+            background-color: var(--accent);
+            color: #ffffff;
+        }
+
+        /* Section Layout */
+        section {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 12px;
+        }
+
+        /* Skills Styling */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-group h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 12px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background-color: var(--pill-bg);
+            color: var(--pill-text);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Experience Styling */
+        .experience-item {
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .exp-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-top: 4px;
+        }
+
+        .exp-date {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            background-color: var(--bg-body);
+            padding: 4px 12px;
+            border-radius: 4px;
+        }
+
+        .bullets {
+            list-style: none;
+        }
+
+        .bullets li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .bullets li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .project-card {
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 24px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .project-tech {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .exp-header {
+                flex-direction: column;
+                gap: 8px;
+            }
+            header {
+                padding: 30px 20px;
+            }
+            section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header / Hero Section -->
+        <header>
+            <h1>Akhilesh Dixit</h1>
+            <h2>Software Engineer | Enterprise Java & Generative AI</h2>
+            <div class="contact-links">
+                <a href="mailto:akhileshdixit25@gmail.com"><i class="fas fa-envelope"></i> akhileshdixit25@gmail.com</a>
+                <a href="tel:+918605202938"><i class="fas fa-phone"></i> +91-8605202938</a>
+                <a href="https://linkedin.com/in/akhileshdixit" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Pune, India</a>
+            </div>
+        </header>
+
+        <!-- Technical Skills -->
+        <section>
+            <h3 class="section-title"><i class="fas fa-code"></i> Technical Arsenal</h3>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h4>Languages</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java 17</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">MySQL</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4>Frameworks</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">Spring MVC</span>
+                        <span class="skill-tag">Spring Data JPA</span>
+                        <span class="skill-tag">Spring Cloud</span>
+                        <span class="skill-tag">JUnit 5</span>
+                        <span class="skill-tag">Mockito</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4>Cloud & DevOps</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS (EC2, S3)</span>
+                        <span class="skill-tag">Jenkins</span>
+                        <span class="skill-tag">PCF</span>
+                        <span class="skill-tag">BitBucket / GitHub</span>
+                        <span class="skill-tag">Dynatrace / Splunk</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4>AI & Architecture</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">GenAI</span>
+                        <span class="skill-tag">Multi-Agent Systems</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">Claude</span>
+                        <span class="skill-tag">Microservices</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section>
+            <h3 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h3>
+            
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Software Engineer</div>
+                        <div class="exp-company">EPAM Systems - Client: Mastercard Payment Gateway Services</div>
+                    </div>
+                    <div class="exp-date">Feb 2025 - Present</div>
+                </div>
+                <ul class="bullets">
+                    <li>Modernized 8+ core REST endpoints architected to support high-volume legacy transaction loads across 4 core payment microservices and monolithic modules.</li>
+                    <li>Authored comprehensive unit and integration test suites with JUnit 5 and Mockito, achieving 95%+ code coverage across payment workflows and clearing strict zero-defect Sonar quality gates.</li>
+                    <li>Implemented strict request validation and sensitive-data masking in application logs to ensure PCI-compliant handling of payment payloads.</li>
+                    <li>Built automated Jenkins CI/CD pipelines to streamline cross-environment staging deployments and regression runs, establishing isolated and reliable deployment processes.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Software Engineer</div>
+                        <div class="exp-company">EPAM Systems - E-commerce Microservices Platform</div>
+                    </div>
+                    <div class="exp-date">Oct 2024 - Jan 2025</div>
+                </div>
+                <ul class="bullets">
+                    <li>Developed backend microservices using Java 17, Spring Boot, REST APIs, and MySQL to support core customer and vendor workflows during an intensive enterprise-incubation project.</li>
+                    <li>Implemented authentication, profile management, product management, shopping cart, checkout, and order-management functionality.</li>
+                    <li>Integrated Amazon S3 and deployed microservices on AWS EC2 for cloud-based execution.</li>
+                    <li>Authored unit tests with JUnit 5 and Mockito, achieving 90% coverage while maintaining strict production-grade code quality through Sonar analysis.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section>
+            <h3 class="section-title"><i class="fas fa-folder-open"></i> Key Projects</h3>
+            <div class="projects-grid">
+                
+                <!-- NEW PROJECT -->
+                <div class="project-card">
+                    <div class="project-title">AI Merchant MCC Validator</div>
+                    <div class="project-tech">LLMs, Multi-Agent Systems, API Integrations (Google Maps, Meta, Tavily, Bing)</div>
+                    <ul class="bullets">
+                        <li>Engineered a multi-agent AI system to validate Merchant Category Codes (MCC) by dynamically aggregating and cross-referencing merchant data across Google Maps, Bing, Tavily, and Meta APIs.</li>
+                        <li>Orchestrated an advanced LLM pipeline where an initial agent cleansed raw internet scraped data, and a secondary agent synthesized the information to predict accurate MCCs.</li>
+                        <li>Designed the pipeline to generate comprehensive, human-readable comparative reasoning highlighting the discrepancies between actual and interpreted MCCs based on the gathered data.</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Smart Mapper</div>
+                    <div class="project-tech">Java, LLMs, AI Agents, Prompt Engineering</div>
+                    <ul class="bullets">
+                        <li>Developed an LLM-powered solution to semantically map fields across disparate API documents using field descriptions and contextual meaning.</li>
+                        <li>Designed a multi-agent workflow with LLM integration for intelligent and automated API mapping.</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Architecture-to-Terraform</div>
+                    <div class="project-tech">Java, React, LLMs, Terraform</div>
+                    <ul class="bullets">
+                        <li>Built an AI solution that transforms cloud architecture diagrams into ready-to-use Terraform Infrastructure-as-Code.</li>
+                        <li>Developed a custom architecture whiteboard, enriching LLM inputs with structured JSON to improve generation accuracy.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section>
+            <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education & Accolades</h3>
+            
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Bachelor of Engineering in Computer Engineering</div>
+                        <div class="exp-company">Vishwakarma Institute of Information Technology (VIIT) | CGPA: 9.6/10</div>
+                    </div>
+                    <div class="exp-date">2020 - 2024</div>
+                </div>
+            </div>
+
+            <div class="experience-item" style="margin-top: 20px;">
+                <div class="exp-title" style="font-size: 1.1rem; margin-bottom: 10px;">Certifications & Awards</div>
+                <ul class="bullets">
+                    <li><strong>Certification:</strong> Anthropic - Claude Certified Architect: Foundations (2026)</li>
+                    <li><strong>Awards:</strong> Delivery Excellence Award (2025), India AI Innovation Enabler Award, India Best Team Award</li>
+                    <li><strong>Hackathons:</strong> 4th Place, India-wide AI Hackathon</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
